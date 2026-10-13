@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dino Runner - Pixel Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars-bg"></div>
+
+  <main class="arcade-container">
+    <!-- Header / Brand -->
+    <header class="game-header">
+      <div class="logo-badge">
+        <span class="pixel-icon">🦖</span>
+        <h1 class="game-title">CHRONO DINO</h1>
+      </div>
+      <div class="score-board">
+        <div class="score-card">
+          <span class="label">HI-SCORE</span>
+          <span id="highScore" class="val">00000</span>
+        </div>
+        <div class="score-card active-score">
+          <span class="label">SCORE</span>
+          <span id="currentScore" class="val">00000</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Canvas Frame -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="800" height="260"></canvas>
+      
+      <!-- Overlay Screen: Start / Game Over -->
+      <div id="gameOverlay" class="game-overlay">
+        <div class="overlay-card">
+          <div id="overlayIcon" class="overlay-icon">⚡</div>
+          <h2 id="overlayTitle" class="overlay-title">PRESS SPACE TO RUN</h2>
+          <p id="overlaySubtitle" class="overlay-sub">Jump over cacti and dodge pterodactyls</p>
+          <button id="actionBtn" class="arcade-btn">START GAME</button>
+        </div>
+      </div>
+
+      <!-- Controls Hint Bar -->
+      <div class="hud-bar">
+        <div class="hud-item"><kbd>Space</kbd> or <kbd>↑</kbd> Jump</div>
+        <div class="hud-item"><kbd>↓</kbd> Duck</div>
+        <div class="hud-item" id="soundToggleBtn"><span id="soundIcon">🔊</span> Sound</div>
+      </div>
+    </div>
+
+    <!-- Mobile Touch Controls -->
+    <div class="mobile-controls">
+      <button id="duckTouchBtn" class="touch-btn duck-btn" aria-label="Duck">
+        <span>▼</span> DUCK
+      </button>
+      <button id="jumpTouchBtn" class="touch-btn jump-btn" aria-label="Jump">
+        <span>▲</span> JUMP
+      </button>
+    </div>
+
+    <!-- Footer Stats / Instructions -->
+    <footer class="game-footer">
+      <p>A modern neon-retro Chrome Dino runner created with HTML5 Canvas & Web Audio.</p>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
